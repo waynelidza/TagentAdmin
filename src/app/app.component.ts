@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Nav, Platform } from 'ionic-angular';
+import {LoginPage} from "../pages/login/login";
 
 
 @Component({
@@ -10,16 +11,12 @@ import { Nav, Platform } from 'ionic-angular';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'Page1';
+  rootPage: any = LoginPage ;
 
   pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Page One', component: 'Page1' },
-      { title: 'Page Two', component: 'Page2' }
-    ];
 
   }
 
