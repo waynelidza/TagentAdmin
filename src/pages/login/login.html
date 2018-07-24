@@ -8,7 +8,7 @@
 
 
 <ion-content padding   id="body">
-  <form #loginForm="ngForm" (ngSubmit)="Login()" id="form" >
+  <form #loginForm="ngForm" (ngSubmit)="Login()" id="formlogin" >
 
     <ion-item>
       <ion-label>Username</ion-label>
@@ -17,7 +17,7 @@
     <ion-item>
       <br>
       <ion-label>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="login.password"name="password"></ion-input>
+      <ion-input  id="password" type="password" [(ngModel)]="login.password"name="password"></ion-input>
     </ion-item>
     <div padding>
       <button id="btnlogin" ion-button full>LOG IN</button>

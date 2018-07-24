@@ -19,15 +19,11 @@ import {MainPage} from "../main/main";
 export class LoginPage {
 
   login = {password: '', username: ''};
-
   errorcount = 0;
   admin = 0
   varcounterrorLogin = 0;
-  user;
-  any;
-  userGcmID;
   alertmessage = '';
-  data: any
+  data: any;
 
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, public Service: SystemProvider, public alertCtrl: AlertController, public storage: Storage) {
   }
@@ -61,6 +57,7 @@ export class LoginPage {
             response => {
 
               if (response.token) {
+                //storing storage in sqlite /database
                 this.storage.set('Token', response.token)
                 this.navCtrl.push(MainPage);
 

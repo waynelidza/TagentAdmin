@@ -10,6 +10,7 @@ import {
   StatusBarMock,
   SplashScreenMock
 } from '../../test-config/mocks-ionic';
+import {LoginPage} from "../pages/login/login";
 
 describe('MyApp Component', () => {
   let fixture;
@@ -29,17 +30,45 @@ describe('MyApp Component', () => {
     })
   }));
 
+  beforeEach(async(() => {
+
+    TestBed.configureTestingModule({
+
+      declarations: [MyApp],
+
+      providers: [
+
+      ],
+
+      imports: [
+        IonicModule.forRoot(MyApp)
+      ]
+
+    }).compileComponents();
+
+  }));
+
   beforeEach(() => {
+
     fixture = TestBed.createComponent(MyApp);
-    component = fixture.componentInstance;
+    component    = fixture.componentInstance;
+
   });
 
-  it('should be created', () => {
-    expect(component instanceof MyApp).toBe(true);
+  afterEach(() => {
+    fixture.destroy();
+    component = null;
   });
 
-  it('should have two pages', () => {
-    expect(component.pages.length).toBe(2);
+  it('is created', () => {
+
+    expect(fixture).toBeTruthy();
+    expect(component).toBeTruthy();
+
+  });
+
+  it('initialises with a root page of LoginPage', () => {
+    expect(component['rootPage']).toBe(LoginPage);
   });
 
 });
