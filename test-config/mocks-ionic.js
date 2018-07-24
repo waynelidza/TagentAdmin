@@ -234,18 +234,14 @@ var ViewControllerMock = (function () {
     ViewControllerMock.prototype.showBackButton = function () {
         return true;
     };
-    ViewControllerMock.prototype._setHeader = function () {
-        return true;
-    };
-    ViewControllerMock.prototype._setIONContent = function () {
-        return true;
-    };
-    ViewControllerMock.prototype._setIONContentRef = function () {
-        return true;
-    };
-    ViewControllerMock.prototype._setNavbar = function () {
-        return true;
-    };
+    ViewControllerMock.prototype._setHeader = function () { return {}; };
+    ;
+    ViewControllerMock.prototype._setNavbar = function () { return {}; };
+    ;
+    ViewControllerMock.prototype._setIONContent = function () { return {}; };
+    ;
+    ViewControllerMock.prototype._setIONContentRef = function () { return {}; };
+    ;
     ViewControllerMock.prototype._setContent = function () {
         return true;
     };

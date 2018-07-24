@@ -24,7 +24,7 @@ export class LoginPage {
   varcounterrorLogin = 0;
   alertmessage = '';
   data: any;
-
+  token :any;
   constructor(public loadingCtrl: LoadingController, public navCtrl: NavController, public navParams: NavParams, public Service: SystemProvider, public alertCtrl: AlertController, public storage: Storage) {
   }
 
@@ -43,7 +43,7 @@ export class LoginPage {
 
     }
     if (this.varcounterrorLogin > 0) {
-      this.alertmessage = "  Username and password cannot be blank";
+      this.alertmessage = "Username and password cannot be blank";
       this.showAlert()
     }
     else {
@@ -55,8 +55,8 @@ export class LoginPage {
         this.Service.login(this.login.username, this.login.password)
           .subscribe(
             response => {
-
-              if (response.token) {
+                 this.token = response;
+              if (this.token.token) {
                 //storing storage in sqlite /database
                 this.storage.set('Token', response.token)
                 this.navCtrl.push(MainPage);

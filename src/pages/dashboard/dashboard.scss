@@ -1,3 +1,21 @@
 page-dashboard {
+  .scroll-content {
+    background-image: url(../assets/imgs/background.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+  }
+
+  ion-card-header {
+    font-weight: bold;
+  }
 
 }
+#body {
+
+
+  width:100%;
+}
+container{
+  z-index: -999;
+}
+

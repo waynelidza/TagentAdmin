@@ -44,7 +44,7 @@ var LoginPage = (function () {
             this.varcounterrorLogin++;
         }
         if (this.varcounterrorLogin > 0) {
-            this.alertmessage = "  Username and password cannot be blank";
+            this.alertmessage = "Username and password cannot be blank";
             this.showAlert();
         }
         else {
@@ -54,7 +54,8 @@ var LoginPage = (function () {
             loader_1.present().then(function () {
                 _this.Service.login(_this.login.username, _this.login.password)
                     .subscribe(function (response) {
-                    if (response.token) {
+                    _this.token = response;
+                    if (_this.token.token) {
                         //storing storage in sqlite /database
                         _this.storage.set('Token', response.token);
                         _this.navCtrl.push(MainPage);

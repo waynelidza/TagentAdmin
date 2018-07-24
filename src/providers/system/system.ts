@@ -44,13 +44,13 @@ export class SystemProvider {
     this.storage.get('Token').then((token) => {
 
       this.userToken = token;
-      console.log('Your age is', token);
+
     });
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678',
+        'Authorization': 'Token'+this.userToken,
 
       })
     };
@@ -64,11 +64,16 @@ export class SystemProvider {
   }
 
   getUserProfile(){
+    this.storage.get('Token').then((token) => {
+
+      this.userToken = token;
+
+    });
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678',
+        'Authorization': 'Token'+this.userToken,
 
       })
     };
@@ -81,11 +86,16 @@ export class SystemProvider {
       });
   }
   getEmployeeDeatils(){
+    this.storage.get('Token').then((token) => {
+
+      this.userToken = token;
+
+    });
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Token 2a3d1af2f3f6d1cddaa3012c1c465fcbdffa3678',
+        'Authorization': 'Token'+this.userToken,
 
       })
     };

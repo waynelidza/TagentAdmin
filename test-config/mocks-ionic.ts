@@ -207,7 +207,6 @@ export class ViewControllerMock {
       resolve();
     });
   }
-
   public dismiss(): any {
     return true;
   }
@@ -248,22 +247,10 @@ export class ViewControllerMock {
     return true;
   }
 
-  public _setHeader(): any {
-    return true;
-  }
-
-  public _setIONContent(): any {
-    return true;
-  }
-
-  public _setIONContentRef(): any {
-    return true;
-  }
-
-  public _setNavbar(): any {
-    return true;
-  }
-
+  public _setHeader(): any { return {} };
+  public _setNavbar(): any { return {} };
+  public _setIONContent(): any { return {} };
+  public _setIONContentRef(): any { return {} };
   public _setContent(): any {
     return true;
   }

@@ -13,6 +13,8 @@ import {MainPageModule} from "../pages/main/main.module";
 import {ProfilePageModule} from "../pages/profile/profile.module";
 import {SearchPageModule} from "../pages/search/search.module";
 import {DashboardPageModule} from "../pages/dashboard/dashboard.module";
+import {ChartsModule} from "ng2-charts";
+import {PipesModule} from "../pipes/pipes.module";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {DashboardPageModule} from "../pages/dashboard/dashboard.module";
     LoginPageModule,
     HttpClientModule,
     MainPageModule,
+    ChartsModule,
     ProfilePageModule,
     SearchPageModule,
     DashboardPageModule,
